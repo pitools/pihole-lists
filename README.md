@@ -9,4 +9,4 @@
 5. In the `Add a new subscribed list` section at the top, paste the link into address URL input
 6. Add comment and group assignment if needed
 7. Click red "Add blocklist" button
-8. Go into your CLI and refresh pihole configurations with `pihole -g`
+8. Go into your CLI and type `pihole -g` to re-apply your lists

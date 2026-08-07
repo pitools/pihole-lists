@@ -1,5 +1,7 @@
 # Pi-hole Block Lists
 
+Lists of domains to block for your Pi-hole.
+
 ## Adding a list
 
 1. Choose a list in [lists](https://codeberg.org/SerhiiCho/pihole-block-lists/src/branch/master/lists) directory

@@ -4,7 +4,7 @@ Lists of domains to block for your Pi-hole.
 
 ## Adding a list
 
-1. Choose a list in [lists](https://codeberg.org/SerhiiCho/pihole-block-lists/src/branch/master/lists) directory
+1. Choose a list in [lists](https://codeberg.org/pihole/lists/src/branch/master/lists) directory
 2. Click on it and choose `Raw` preview
 3. Copy the URL of this raw preview page
 4. Go into your Pi-hole dashboard -> Lists

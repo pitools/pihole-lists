@@ -2,6 +2,10 @@
 
 Lists of domains to block for your Pi-hole.
 
+## Lists
+
+- [18plus.list](https://codeberg.org/lab-zero/pihole-lists/src/branch/master/lists/18plus.list) - The longest list of adult websites on the internet
+
 ## Adding a list
 
 1. Choose a list in [lists](https://codeberg.org/lab-zero/pihole-lists/src/branch/master/lists) directory

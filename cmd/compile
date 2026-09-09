@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+locales=(zh-cn de en fr it es pt ua kz pl cz lv 'fi' gr hu sk ro mk nl tr kr jp in ar il id bg rt)

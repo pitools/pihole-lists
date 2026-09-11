@@ -4,12 +4,16 @@ locales=(zh-cn zh ru de en fr it es pt ua kz pl cz lv 'fi' gr hu sk ro mk nl tr 
 list_names=(18plus)
 
 transform_line() {
-    local line="$1"
-    echo "$line"
+    read -ra parts <<< "$1"
+    read -r domain <<< "${parts[0]}"
+    read -r tags <<< "${parts[1]}"
+
+    echo "$tags"
 }
 
 for list in "${list_names[@]}"; do
     while read -r line; do
       transform_line "$line"
-    done < "src/$list.source" > "lists/$list.list"
+    #done < "src/$list.source" > "lists/$list.list"
+    done < "src/$list.source"
 done

@@ -2,8 +2,7 @@
 
 Lists of domains to block for your Pi-hole.
 
-> [!NOTE]
-> All compiled lists ready for your Pi-hole live on [lists](https://codeberg.org/lab-zero/pihole-lists/src/branch/lists) branch.
+All the compiled lists ready for your Pi-hole live on [lists](https://codeberg.org/lab-zero/pihole-lists/src/branch/lists) branch.
 
 ## Lists
 

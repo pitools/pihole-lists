@@ -42,5 +42,5 @@ validate_domains() {
 }
 
 for list in "${LIST_NAMES[@]}"; do
-    validate_domains "src/$list.source"
+    validate_domains "src/$list"
 done

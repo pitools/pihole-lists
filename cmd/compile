@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Compiles ./src files into root directory by
 # expending the domain list.
 

@@ -20,12 +20,18 @@ jobs:
       - name: Compile
         run: ./cmd/compile
 
-      - name: Push to lists branch
+      - name: Validate source list
+        run: ./cmd/validate
+
+      - name: Configure Git User
         run: |
-          set -eu
           git config --global user.name "forgejo-actions[bot]"
           git config --global user.email "forgejo-actions[bot]@local"
           git config --global --add safe.directory "$GITHUB_WORKSPACE" || true
+
+      - name: Push to lists branch
+        run: |
+          set -eu
           git fetch origin lists || true
 
           if git show-ref --verify --quiet refs/remotes/origin/lists; then

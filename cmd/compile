@@ -12,23 +12,36 @@ split() {
     read -ra arr <<< "$*"
 }
 
+print_domain_with_locales() {
+    for locale in "${locales[@]}"; do
+        echo "$locale.$1"
+    done
+}
+
 transform_line() {
     local parts=()
-    local tags=()
-
     split parts " " "$1"
 
     read -r domain <<< "${parts[0]}"
     read -r second_part <<< "${parts[1]}"
 
+    echo "$domain"
+
+    local tags=()
     split tags "," "$second_part"
 
-    echo "${tags[0]}"
+    for tag in "${tags[@]}"; do
+        if [[ "$tag" == "@langs" ]]; then
+            print_domain_with_locales "$domain"
+            continue
+        fi
+
+        echo "$tag.$domain"
+    done
 }
 
 for list in "${list_names[@]}"; do
     while read -r line; do
       transform_line "$line"
-    #done < "src/$list.source" > "lists/$list.list"
-    done < "src/$list.source"
+    done < "src/$list.source" > "lists/$list.list"
 done

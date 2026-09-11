@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Compiles ./src files into ./lists directory by
+# Compiles ./src files into root directory by
 # expending the domain list.
 
 source cmd/config
@@ -37,6 +37,8 @@ for list in "${LIST_NAMES[@]}"; do
     source_file="src/$list.source"
     output_file="lists/$list.list"
     source_lines="$(wc -l "$source_file" | awk '{ print $1 }')"
+
+    mkdir lists
 
     echo "⌛ Transforming $source_lines entries. $source_file -> $output_file..."
 

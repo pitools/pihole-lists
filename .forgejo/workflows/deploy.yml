@@ -17,11 +17,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Compile
-        run: ./cmd/compile
-
       - name: Validate source list
         run: ./cmd/validate
+
+      - name: Compile
+        run: ./cmd/compile
 
       - name: Configure Git User
         run: |

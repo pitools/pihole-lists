@@ -1,0 +1,19 @@
+name: Deploy
+enable-email-notifications: true
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: podman
+    container: docker.io/library/node:26
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Compile
+        run: ./cmd/compile

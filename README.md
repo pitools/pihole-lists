@@ -6,7 +6,7 @@ All the compiled lists ready for your Pi-hole live on [lists](https://codeberg.o
 
 ## Lists
 
-- [18plus.list](https://codeberg.org/lab-zero/pihole-lists/raw/branch/lists/18plus.list) - The longest list of adult websites on the internet
+- [18plus](https://codeberg.org/lab-zero/pihole-lists/raw/branch/lists/18plus) - The longest list of adult websites on the internet
 
 ## Adding a list
 

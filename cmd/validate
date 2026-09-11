@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Check if source files in ./src directory contain
 # any duplicate domains.
 

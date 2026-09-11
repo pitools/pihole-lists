@@ -3,20 +3,10 @@
 # Compiles ./src files into ./lists directory by
 # expending the domain list.
 
-locales=(zh-cn zh ru de en fr it es pt ua kz pl cz lv 'fi' gr hu sk ro mk nl tr kr jp in ar il id bg rt)
-list_names=(18plus)
-
-# shellcheck disable=SC2034
-split() {
-    local -n arr=$1
-    local delim=$2
-    shift 2
-    local IFS="$delim"
-    read -ra arr <<< "$*"
-}
+source cmd/config
 
 print_domain_with_locales() {
-    for locale in "${locales[@]}"; do
+    for locale in "${LOCALES[@]}"; do
         echo "$locale.$1"
     done
 }
@@ -43,7 +33,7 @@ transform_line() {
     done
 }
 
-for list in "${list_names[@]}"; do
+for list in "${LIST_NAMES[@]}"; do
     source_file="src/$list.source"
     output_file="lists/$list.list"
     source_lines="$(wc -l "$source_file" | awk '{ print $1 }')"

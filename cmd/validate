@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+# Check if source files in ./src directory contain
+# any duplicate domains.
+
+source cmd/config
+
+get_domain() {
+    local parts=()
+    split parts " " "$1"
+
+    read -r domain <<< "${parts[0]}"
+
+    echo "$domain"
+}
+
+print_duplicates() {
+    local dups
+    local has_dups=0
+    dups=$(printf "%s\n" "$@" | sort | uniq -d)
+
+    while IFS= read -r dup; do
+        [[ "$dup" == "" ]] && continue
+        has_dups=1
+        echo "⚠️ Remove duplicate domain: $dup"
+    done <<< "$dups"
+
+    if [[ "$has_dups" == 0 ]]; then
+        echo "✅ No duplicates found!"
+    fi
+}
+
+validate_domains() {
+    local domains=()
+
+    while read -r line; do
+        [[ "$line" == ""  ]] && continue
+        domains+=("$(get_domain "$line")")
+    done < "$1"
+
+    print_duplicates "${domains[@]}"
+}
+
+for list in "${LIST_NAMES[@]}"; do
+    validate_domains "src/$list.source"
+done

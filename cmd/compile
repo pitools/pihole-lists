@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Compiles ./src files into ./lists directory by
+# expending the domain list.
+
 locales=(zh-cn zh ru de en fr it es pt ua kz pl cz lv 'fi' gr hu sk ro mk nl tr kr jp in ar il id bg rt)
 list_names=(18plus)
 
@@ -41,7 +44,16 @@ transform_line() {
 }
 
 for list in "${list_names[@]}"; do
+    source_file="src/$list.source"
+    output_file="lists/$list.list"
+    source_lines="$(wc -l "$source_file" | awk '{ print $1 }')"
+
+    echo "⌛ Transforming $source_lines entries. $source_file -> $output_file..."
+
     while read -r line; do
       transform_line "$line"
-    done < "src/$list.source" > "lists/$list.list"
+    done < "$source_file" > "$output_file"
+
+    output_lines="$(wc -l "$output_file" | awk '{ print $1 }')"
+    echo "✅ Done: $output_lines domains are ready!"
 done

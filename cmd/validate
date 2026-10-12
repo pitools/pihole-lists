@@ -24,11 +24,11 @@ print_duplicates() {
     while IFS= read -r dup; do
         [[ "$dup" == "" ]] && continue
         has_dups=1
-        echo "⚠️ Remove duplicate domain: $dup"
+        echo "⚠️  Remove duplicate domain: $dup"
     done <<< "$dups"
 
     if [[ "$has_dups" == 0 ]]; then
-        echo "✅ No duplicates found!"
+        echo "✅  No duplicates found!"
     fi
 }
 

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+git add .
+git commit -m 'feat: add more domains'
+git push origin master
+
+echo "✅ Done"

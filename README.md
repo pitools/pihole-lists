@@ -2,7 +2,7 @@
 
 Lists of domains to block for your Pi-hole.
 
-All the compiled lists ready for your Pi-hole live on [lists](https://github.com/pitools/pihole-lists/src/branch/lists) branch.
+All the compiled lists ready for your Pi-hole live on [lists](https://github.com/pitools/pihole-lists/tree/lists) branch.
 
 ## Lists
 

@@ -1,5 +1,4 @@
 name: Deploy
-enable-email-notifications: true
 
 on:
   push:
@@ -8,8 +7,7 @@ on:
 jobs:
   deploy:
     name: Deploy
-    runs-on: podman
-    container: docker.io/library/node:26
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -25,8 +23,8 @@ jobs:
 
       - name: Configure Git User
         run: |
-          git config --global user.name "forgejo-actions[bot]"
-          git config --global user.email "forgejo-actions[bot]@local"
+          git config --global user.name "actions[bot]"
+          git config --global user.email "actions[bot]@local"
           git config --global --add safe.directory "$GITHUB_WORKSPACE" || true
 
       - name: Push to lists branch

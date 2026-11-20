@@ -2,15 +2,15 @@
 
 Lists of domains to block for your Pi-hole.
 
-All the compiled lists ready for your Pi-hole live on [lists](https://codeberg.org/lab-zero/pihole-lists/src/branch/lists) branch.
+All the compiled lists ready for your Pi-hole live on [lists](https://github.com/pitools/pihole-lists/src/branch/lists) branch.
 
 ## Lists
 
-- [18plus](https://codeberg.org/lab-zero/pihole-lists/raw/branch/lists/18plus) - The longest list of adult websites on the internet
+- [18plus](https://raw.githubusercontent.com/pitools/pihole-lists/refs/heads/master/src/18plus) - The longest list of adult websites on the internet
 
 ## Adding a list
 
-1. Choose a list on [lists](https://codeberg.org/lab-zero/pihole-lists/src/branch/lists) branch
+1. Choose a list on [lists](https://github.com/pitools/pihole-lists/tree/lists) branch
 1. Click on the file you need
 1. Click on `Raw` button to preview raw content
 1. Copy the URL of this raw preview page

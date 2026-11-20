@@ -1,5 +1,7 @@
 # Pi-hole Block Lists
 
+[![Deploy](https://github.com/pitools/pihole-lists/actions/workflows/deploy.yml/badge.svg)](https://github.com/pitools/pihole-lists/actions/workflows/deploy.yml)
+
 Lists of domains to block for your Pi-hole.
 
 All the compiled lists ready for your Pi-hole live on [lists](https://github.com/pitools/pihole-lists/tree/lists) branch.
